@@ -22,6 +22,7 @@ button { cursor: pointer; }
 .site-shell { width: min(100%, 1120px); margin: 0 auto; padding: 20px 24px 56px; }
 .topbar { display: flex; align-items: center; justify-content: space-between; margin: 0 auto 18px; padding: 0 4px; }
 .brand-lockup { display: flex; align-items: center; gap: 11px; }
+.brand-lockup > div { text-align: center; }
 .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50% 50% 45% 55%; background: var(--peach); color: #fff; font-size: 17px; transform: rotate(-13deg); }
 .eyebrow, .section-kicker { margin: 0; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
 .brand-name { margin: 2px 0 0; font-size: 15px; font-weight: 800; letter-spacing: -.02em; }
@@ -52,7 +53,7 @@ h1 em { color: #d78367; font-style: normal; }
 .baby-cloud { position: absolute; left: 51%; top: 54%; width: 230px; height: 158px; border-radius: 49% 46% 42% 50%; background: #fffdfa; box-shadow: 0 20px 0 rgba(157,202,211,.35), 0 15px 28px rgba(67,121,136,.1); transform: translate(-50%, -50%); animation: cloud-bob 4s ease-in-out infinite; }
 .cloud-face { position: absolute; left: 74px; top: 52px; color: #40506a; font-size: 25px; letter-spacing: 5px; }.cloud-arm { position: absolute; top: 90px; width: 37px; height: 12px; border-radius: 99px; background: #fffdfa; }.arm-left { left: -22px; transform: rotate(21deg); }.arm-right { right: -21px; transform: rotate(-20deg); }
 .bottle-icon { position: absolute; left: 24px; top: 94px; font-size: 46px; transform: rotate(-18deg); filter: drop-shadow(0 5px 2px rgba(95,166,182,.16)); }.spoon-icon { position: absolute; right: 13px; top: 89px; font-size: 34px; transform: rotate(20deg); }.cloud-feet { position: absolute; left: 82px; bottom: -25px; display: flex; gap: 44px; }.cloud-feet i { display: block; width: 24px; height: 17px; border-radius: 0 0 99px 99px; background: #ffdbc8; }
-.art-caption { position: absolute; bottom: 28px; left: 50%; padding: 7px 12px; border-radius: 99px; background: rgba(255,255,255,.62); color: #6799a5; font-size: 12px; font-weight: 800; white-space: nowrap; transform: translateX(-50%); }
+.art-caption { position: absolute; z-index: 3; bottom: 28px; left: 30%; padding: 7px 12px; border-radius: 99px; background: rgba(255,255,255,.78); color: #6799a5; font-size: 12px; font-weight: 800; white-space: nowrap; transform: translateX(-50%); }
 @keyframes cloud-bob { 0%,100% { transform: translate(-50%, -50%) rotate(-1deg); } 50% { transform: translate(-50%, calc(-50% - 8px)) rotate(1deg); } }
 @keyframes baby-bob { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-7px) rotate(1deg); } }
 @keyframes floaty { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-9px) rotate(7deg); } }
@@ -82,7 +83,7 @@ h1 em { color: #d78367; font-style: normal; }
 @media (max-width: 760px) {
   .site-shell { padding: 14px 14px 40px; }
   .topbar { margin-bottom: 13px; }.brand-name { font-size: 14px; }.eyebrow { font-size: 9px; }.month-pill { padding: 7px 10px; font-size: 11px; }
-  .hero-card { grid-template-columns: 1fr; min-height: 0; border-radius: 27px; }.hero-copy { padding: 28px 23px 25px; }.hello-tag { margin-bottom: 16px; font-size: 11px; }.hero-subtitle { margin-bottom: 21px; font-size: 13px; }.hero-art { min-height: 300px; }.sun-dot { top: 30px; right: 18%; width: 54px; height: 54px; }.avery-baby { right: 50%; bottom: -22px; height: 325px; max-width: none; transform: translateX(50%); animation-name: baby-bob-mobile; }.art-caption { bottom: 14px; font-size: 10px; }
+  .hero-card { grid-template-columns: 1fr; min-height: 0; border-radius: 27px; }.hero-copy { padding: 28px 23px 25px; }.hello-tag { margin-bottom: 16px; font-size: 11px; }.hero-subtitle { margin-bottom: 21px; font-size: 13px; }.hero-art { min-height: 300px; }.sun-dot { top: 30px; right: 18%; width: 54px; height: 54px; }.avery-baby { right: 50%; bottom: -22px; height: 325px; max-width: none; transform: translateX(50%); animation-name: baby-bob-mobile; }.art-caption { left: 50%; z-index: 3; bottom: 14px; font-size: 10px; }
   @keyframes baby-bob-mobile { 0%,100% { transform: translateX(50%) translateY(0) rotate(-1deg); } 50% { transform: translateX(50%) translateY(-6px) rotate(1deg); } }
   @keyframes cloud-bob-mobile { 0%,100% { transform: translate(-50%, -50%) scale(.8) rotate(-1deg); } 50% { transform: translate(-50%, calc(-50% - 6px)) scale(.8) rotate(1deg); } }
   .quick-nav { padding-top: 11px; }.today-section { padding-top: 34px; }.today-grid { grid-template-columns: 1fr; gap: 9px; }.task-card { min-height: 0; padding: 16px 18px 16px 62px; }.task-emoji { position: absolute; left: 19px; top: 20px; font-size: 25px; }.task-title { font-size: 15px; }.task-action { margin-top: 9px; }.task-check { top: 15px; right: 15px; }
