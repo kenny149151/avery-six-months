@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f8f3eb" />
+    <title>Avery 今日喂养报告</title>
+    <link rel="icon" href="./avery-baby.png" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="report-page">
+      <article class="report-card">
+        <div class="report-brand"><span>✦</span><div><strong>AVERY'S LITTLE FOOD JOURNEY</strong><small>Avery 6个月小课堂</small></div></div>
+        <div class="report-hero"><span class="report-emoji">🍼</span><p class="section-kicker">今日喂养小报告</p><h1>Avery 今天做得怎么样？</h1><p id="report-date" class="report-date">正在读取记录时间…</p></div>
+        <section class="report-summary"><div><strong id="report-done">0/3</strong><span>今日任务完成</span></div><div><strong id="report-water">0 ml</strong><span>今日记录饮水</span></div></section>
+        <section class="report-section"><h2>今天的三件小事</h2><div id="report-tasks" class="report-tasks"></div></section>
+        <section class="report-section"><h2>喂养提醒</h2><div class="report-tips"><p>转奶：一天一次，按照医生安排慢慢调整。</p><p>米糊：从 1–2 勺开始，用勺喂，不放进奶瓶。</p><p>喝水：睡醒、吃完或 Avery 想喝时，愿意喝就喝。</p></div></section>
+        <div class="report-note">这份报告是家庭记录，不替代 Avery 的儿科医生意见。</div>
+        <a class="report-home" href="./">回到 Avery 小课堂</a>
+      </article>
+    </main>
+    <script>
+      (() => {
+        const params = new URLSearchParams(location.search);
+        let item;
+        try { item = JSON.parse(params.get('data') || params.get('report') || '{}'); } catch { item = {}; }
+        const tasks = ['一餐 2 段奶', '试 1–2 勺米糊', '水杯放手边'];
+        const done = Array.isArray(item.completedTasks) ? item.completedTasks : [false, false, false];
+        const created = item.createdAt ? new Date(item.createdAt) : new Date();
+        const date = new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: 'numeric', day: 'numeric', weekday: 'long', hour: '2-digit', minute: '2-digit' }).format(created);
+        document.querySelector('#report-date').textContent = `记录时间：${date}`;
+        document.querySelector('#report-done').textContent = `${done.filter(Boolean).length}/3`;
+        document.querySelector('#report-water').textContent = `${Number(item.waterMl || 0)} ml`;
+        document.querySelector('#report-tasks').innerHTML = tasks.map((task, index) => `<div class="${done[index] ? 'done' : ''}"><span>${done[index] ? '✓' : '○'}</span>${task}<small>${done[index] ? '已完成' : '今天未勾选'}</small></div>`).join('');
+      })();
+    </script>
+  </body>
+</html>
