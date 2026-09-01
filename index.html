@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f8f3eb" />
+    <meta name="description" content="Avery 6个月开始添加辅食的小课堂" />
+    <title>Avery 6个月小课堂</title>
+    <link rel="icon" href="./avery-baby.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      .shared-note { display:none; margin: 0 0 16px; padding: 13px 15px; border-radius: 15px; background:#e9f8fb; color:#4e8d9b; font-size:12px; line-height:1.6; }
+      .shared-note.show { display:block; }
+      .record-link { color:#ffe49b; font-size:10px; line-height:1.45; word-break:break-all; }
+    </style>
+  </head>
+  <body>
+    <main class="site-shell">
+      <div class="topbar">
+        <div class="brand-lockup"><div class="brand-mark" aria-hidden="true">✦</div><div><p class="eyebrow">Avery's little food journey</p><p class="brand-name">Avery 6个月小课堂</p></div></div>
+        <div class="month-pill"><span>●</span> 6个月起</div>
+      </div>
+
+      <div id="shared-note" class="shared-note"></div>
+
+      <section class="hero-card" aria-labelledby="hero-title">
+        <div class="hero-copy"><div class="hello-tag">给 Avery 的小小升级课 <span>♡</span></div><h1 id="hero-title">奶奶继续做主角，<br /><em>辅食慢慢认识世界。</em></h1><p class="hero-subtitle">今天只记住 3 件事：慢慢转奶、温柔试米糊、口渴就给几口水。</p><button class="primary-button" type="button" data-scroll="today">开始小课堂 <span aria-hidden="true">↓</span></button></div>
+        <div class="hero-art" aria-label="抱着奶瓶和小勺的可爱 Avery 插画" role="img"><div class="sun-dot"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="floating-spark spark-one">✦</div><div class="floating-spark spark-two">✧</div><img class="avery-baby" src="./avery-baby.png" width="1024" height="1536" alt="可爱的 Avery 插画" /><div class="art-caption">慢慢来，Avery 做得到！</div></div>
+      </section>
+
+      <nav class="quick-nav" aria-label="页面内容导航"><button type="button" data-scroll="milk">01 转奶</button><button type="button" data-scroll="rice">02 米糊</button><button type="button" data-scroll="water">03 喝水</button><button type="button" data-scroll="safety">安全小贴士</button></nav>
+
+      <section class="today-section" id="today" aria-labelledby="today-title"><div class="section-heading"><div><p class="section-kicker">今日任务 · <span id="done-count">0</span>/3</p><h2 id="today-title">做到这里，就已经很棒啦 <span>🌼</span></h2></div><div class="progress-bubble" aria-label="今日完成进度"><strong id="done-count-big">0</strong><span>/3</span></div></div><div class="today-grid">
+        <button class="task-card" type="button" data-task="0"><span class="task-check">1</span><span class="task-emoji" aria-hidden="true">🍼</span><span class="task-title">一餐 2 段奶</span><span class="task-text">今天只转一餐，按照医生的节奏来。</span><span class="task-action">轻触打勾</span></button>
+        <button class="task-card" type="button" data-task="1"><span class="task-check">2</span><span class="task-emoji" aria-hidden="true">🥣</span><span class="task-title">试 1–2 勺米糊</span><span class="task-text">选择 Avery 精神比较好的一顿。</span><span class="task-action">轻触打勾</span></button>
+        <button class="task-card" type="button" data-task="2"><span class="task-check">3</span><span class="task-emoji" aria-hidden="true">💧</span><span class="task-title">水杯放手边</span><span class="task-text">睡醒、吃完，想喝就喝几口。</span><span class="task-action">轻触打勾</span></button>
+      </div></section>
+
+      <section class="lesson-card milk-card" id="milk"><div class="lesson-label"><span class="number-badge">01</span>先做奶奶的转换</div><div class="lesson-intro"><div><h2>2 段奶粉，一天一次慢慢改</h2><p>不需要一天之内全部换掉，先从一餐开始。节奏跟着 Avery 的反应走。</p></div><div class="milk-cup" aria-hidden="true">🍼<span>1×</span></div></div><div class="step-tabs" role="tablist"><button type="button" class="active" data-milk="0"><span>1</span>现在</button><button type="button" data-milk="1"><span>2</span>慢慢来</button><button type="button" data-milk="2"><span>3</span>小提醒</button></div><div class="step-detail" role="tabpanel"><span class="detail-sticker" id="milk-sticker">🌱</span><div><strong id="milk-title">先换一餐</strong><p id="milk-copy">一天一次，慢慢把这一餐换成 2 段奶粉。Avery 适应后，再按医生安排继续。</p></div></div></section>
+
+      <section class="lesson-card rice-card" id="rice"><div class="lesson-label"><span class="number-badge blue">02</span>再认识第一口米糊</div><div class="lesson-intro"><div><h2>用奶冲米粉，稀稀地开始</h2><p>选择 Avery 精神比较好的一顿。先学会吞咽，分量不需要一次吃完。</p></div><div class="bowl-icon" aria-hidden="true">🥣</div></div><div class="mix-animation" aria-live="polite"><div class="rice-bowl rice-level-0"><div class="rice-fill"></div><div class="rice-swish">～</div></div><div class="mix-arrow" aria-hidden="true">→</div><div class="mix-copy"><span class="mix-amount" id="mix-amount">150 ml</span><span class="mix-spoon" id="mix-spoon">1–2 勺</span><p id="mix-copy">用一顿精神比较好时的奶，冲好奶后调成稀稀的米糊。先试一两勺，不需要一次吃完。</p></div></div><div class="mix-dots" aria-label="米糊三个阶段"><button type="button" class="active" data-mix="0"><span>1</span><small>150 ml奶</small></button><button type="button" data-mix="1"><span>2</span><small>90 ml奶</small></button><button type="button" data-mix="2"><span>3</span><small>120 ml奶</small></button></div><div class="tip-strip"><span>🥄</span><strong>用勺喂，不要把米粉放进奶瓶</strong><span class="tip-heart">♡</span></div></section>
+
+      <section class="lesson-card water-card" id="water"><div class="lesson-label"><span class="number-badge yellow">03</span>水水小补给</div><div class="water-layout"><div><h2>不需要逼，愿意喝就喝</h2><p>加辅食后，可以分几次提供约 <strong>100–200 ml</strong> 水。奶仍然是 Avery 主要的营养和饮品来源。</p><p class="soft-note">睡醒、吃完饭，或者 Avery 主动想喝时，就递上小杯子。</p></div><div class="water-visual" aria-label="今天记录的水量"><div class="water-cup"><div id="water-fill" class="water-fill" style="height:0%"></div><span>💧</span></div><strong><span id="water-number">0</span><small>ml</small></strong></div></div><div class="water-controls"><span>只是方便记录，不是考试：</span><button type="button" id="water-minus" aria-label="减少20毫升">−</button><button type="button" id="water-plus">+20 ml</button><button class="clear-water" type="button" id="water-clear">清零</button></div></section>
+
+      <section class="two-column"><div class="lesson-card food-card"><div class="lesson-label"><span class="number-badge pink">04</span>食物慢慢加</div><h2>从单一，到彩虹餐盘 🌈</h2><p>米糊适应后，可以逐样加入。每次只试一种新食物，先观察 Avery 2–3 天；有过敏或湿疹史，先问医生。</p><div class="food-chips"><div class="food-chip"><span>🥔</span><strong>淮山</strong><small>蒸熟压泥</small></div><div class="food-chip"><span>🍠</span><strong>红薯</strong><small>蒸熟压泥</small></div><div class="food-chip"><span>🍐</span><strong>水果泥</strong><small>软熟少量</small></div><div class="food-chip"><span>🥣</span><strong>粥</strong><small>煮到细软</small></div><div class="food-chip"><span>🥚</span><strong>蛋 / 肉泥</strong><small>补铁蛋白</small></div></div><div class="food-callout"><span>✨</span>之后慢慢增加种类和稠度；铁丰富食物（如肉泥、蛋、强化铁米粉）也值得认识。</div></div><div class="lesson-card ready-card" id="safety"><div class="lesson-label"><span class="number-badge green">05</span>开餐前看一眼</div><h2>Avery 准备好了吗？</h2><div class="ready-list"><div><span>✓</span>可以坐直，头颈控制得好</div><div><span>✓</span>看到食物会张嘴、感兴趣</div><div><span>✓</span>会吞咽，不是一直往外顶</div><div><span>✓</span>醒着吃，有大人全程陪着</div></div><div class="danger-note"><strong>安全底线</strong><p>食物要软、细、无盐无糖；不要蜂蜜。坐直喂，不要边玩边吃。嘴唇或脸肿、风团、反复呕吐、喘或呼吸困难，要立即停食并求医。</p></div></div></section>
+
+      <section class="closing-card"><div class="closing-star">✦</div><div class="closing-copy"><p class="section-kicker">给照顾 Avery 的你</p><h2>每一口都不需要完美，<br />稳定、温柔、慢慢来就够。</h2></div><div class="mini-cloud">☁︎</div><div class="record-panel"><button class="record-button" type="button" id="save-record">保存今天的记录</button><div id="record-result" class="record-link" aria-live="polite"></div><button class="sms-button" type="button" id="sms-button" hidden>发给爸妈 💌</button></div></section>
+
+      <section class="history-card" id="history"><div class="history-heading"><div><p class="section-kicker">打开就能看到</p><h2> Avery 的成长小记录 <span>📖</span></h2></div><span class="history-count"><span id="history-count">0</span> 条</span></div><div id="history-list"><p class="empty-history">保存今天的记录后，这里会自动留下每天的小足迹。记录保存在这台手机的浏览器里。</p></div></section>
+
+      <footer class="site-footer"><div class="medical-note"><strong>温馨说明</strong><span>这是把医生给 Avery 的安排整理成易读版本，不能替代面诊。早产、体重增长慢、严重湿疹、已知过敏或吞咽问题，请按 Avery 的儿科医生意见调整。</span></div><details><summary>资料来源</summary><div class="sources-list"><a href="https://www.who.int/publications/i/item/9789240081864" target="_blank" rel="noreferrer">WHO｜6–23个月辅食指南 ↗</a><a href="https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/when-what-and-how-to-introduce-solid-foods.html" target="_blank" rel="noreferrer">CDC｜6个月开始如何添加辅食 ↗</a><a href="https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx" target="_blank" rel="noreferrer">AAP｜开始固体食物与过敏食物 ↗</a><a href="https://www.nhs.uk/baby/weaning-and-feeding/babys-first-solid-foods/" target="_blank" rel="noreferrer">NHS｜宝宝的第一批辅食 ↗</a><small>权威资料对“新食物间隔”常见建议为 3–5 天；页面保留医生说的 2–3 天节奏，具体以 Avery 的医生建议为准。</small></div></details><p class="footer-line">Made with love for Avery · 6 months and beyond ♡</p></footer>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
