@@ -15,6 +15,11 @@
   let water = 0;
   let records = readRecords();
 
+  function updateClock() {
+    const now = new Date();
+    document.querySelector('#live-date').textContent = new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: 'numeric', day: 'numeric', weekday: 'short' }).format(now);
+    document.querySelector('#live-time').textContent = new Intl.DateTimeFormat('zh-CN', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }).format(now);
+  }
   function readRecords() { try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch { return []; } }
   function persist() { localStorage.setItem(key, JSON.stringify(records)); }
   function todayRecord() { return { completedTasks: done.slice(), waterMl: water, createdAt: new Date().toISOString() }; }
@@ -32,5 +37,5 @@
   document.querySelector('#save-record').addEventListener('click', saveRecord);
   document.querySelector('#sms-button').addEventListener('click', (event) => { const body = encodeURIComponent(event.currentTarget.dataset.report || 'Avery 今日记录'); const isApple = /iPhone|iPad|iPod/i.test(navigator.userAgent); location.href = isApple ? `sms://open?addresses=${parentPhones.join(',')}&body=${body}` : `sms:${parentPhones.join(',')}?body=${body}`; });
   const shared = new URLSearchParams(location.search).get('report'); if (shared) { try { const item = JSON.parse(shared); const note = document.querySelector('#shared-note'); note.textContent = `这是 Avery 分享来的记录：${item.completedTasks.filter(Boolean).length}/3 项完成，饮水 ${item.waterMl} ml。`; note.classList.add('show'); } catch {} }
-  updateProgress(); updateWater(); renderHistory();
+  updateClock(); setInterval(updateClock, 1000); updateProgress(); updateWater(); renderHistory();
 })();
