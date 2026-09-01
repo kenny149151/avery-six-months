@@ -10,6 +10,7 @@
     ['90 ml', '慢慢增加', 'Avery 适应后，逐步把米糊做成约 90 ml 奶冲出来的分量，继续用勺喂。'],
     ['120 ml', '一顿奶', '再慢慢到约 120 ml 奶冲出来的米糊，作为一顿奶的替代；节奏跟着 Avery 的反应走。'],
   ];
+  const parentPhones = ['+8615817468347', '+8618588284390'];
   let done = [false, false, false];
   let water = 0;
   let records = readRecords();
@@ -29,7 +30,7 @@
   document.querySelector('#water-plus').addEventListener('click', () => { water = Math.min(200, water + 20); updateWater(); });
   document.querySelector('#water-clear').addEventListener('click', () => { water = 0; updateWater(); });
   document.querySelector('#save-record').addEventListener('click', saveRecord);
-  document.querySelector('#sms-button').addEventListener('click', (event) => { const body = encodeURIComponent(event.currentTarget.dataset.report || 'Avery 今日记录'); location.href = `sms:?body=${body}`; });
+  document.querySelector('#sms-button').addEventListener('click', (event) => { const body = encodeURIComponent(event.currentTarget.dataset.report || 'Avery 今日记录'); const isApple = /iPhone|iPad|iPod/i.test(navigator.userAgent); location.href = isApple ? `sms://open?addresses=${parentPhones.join(',')}&body=${body}` : `sms:${parentPhones.join(',')}?body=${body}`; });
   const shared = new URLSearchParams(location.search).get('report'); if (shared) { try { const item = JSON.parse(shared); const note = document.querySelector('#shared-note'); note.textContent = `这是 Avery 分享来的记录：${item.completedTasks.filter(Boolean).length}/3 项完成，饮水 ${item.waterMl} ml。`; note.classList.add('show'); } catch {} }
   updateProgress(); updateWater(); renderHistory();
 })();
