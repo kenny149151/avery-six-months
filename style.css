@@ -23,6 +23,11 @@ button { cursor: pointer; }
 .topbar { display: flex; align-items: center; justify-content: space-between; margin: 0 auto 18px; padding: 0 4px; }
 .brand-lockup { display: flex; align-items: center; gap: 11px; }
 .brand-lockup > div { text-align: center; }
+.topbar-tools { display: flex; align-items: center; gap: 9px; }
+.live-clock { display: grid; grid-template-columns: auto auto; column-gap: 6px; align-items: baseline; padding: 7px 10px; border: 1px solid #eee5d9; border-radius: 13px; background: rgba(255,255,255,.58); color: var(--muted); line-height: 1.15; }
+.live-clock span { grid-row: 1 / 3; color: #bd8d79; font-size: 10px; font-weight: 900; }
+.live-clock strong { color: #5f6b7d; font-size: 11px; font-weight: 900; }
+.live-clock small { color: #9aa3af; font-size: 10px; font-variant-numeric: tabular-nums; }
 .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50% 50% 45% 55%; background: var(--peach); color: #fff; font-size: 17px; transform: rotate(-13deg); }
 .eyebrow, .section-kicker { margin: 0; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
 .brand-name { margin: 2px 0 0; font-size: 15px; font-weight: 800; letter-spacing: -.02em; }
@@ -82,7 +87,7 @@ h1 em { color: #d78367; font-style: normal; }
 
 @media (max-width: 760px) {
   .site-shell { padding: 14px 14px 40px; }
-  .topbar { margin-bottom: 13px; }.brand-name { font-size: 14px; }.eyebrow { font-size: 9px; }.month-pill { padding: 7px 10px; font-size: 11px; }
+  .topbar { margin-bottom: 13px; }.brand-name { font-size: 14px; }.eyebrow { font-size: 9px; }.topbar-tools { gap: 5px; }.live-clock { column-gap: 4px; padding: 6px 7px; }.live-clock span { font-size: 9px; }.live-clock strong { font-size: 9px; }.live-clock small { font-size: 9px; }.month-pill { padding: 7px 10px; font-size: 11px; }
   .hero-card { grid-template-columns: 1fr; min-height: 0; border-radius: 27px; }.hero-copy { padding: 28px 23px 25px; }.hello-tag { margin-bottom: 16px; font-size: 11px; }.hero-subtitle { margin-bottom: 21px; font-size: 13px; }.hero-art { min-height: 300px; }.sun-dot { top: 30px; right: 18%; width: 54px; height: 54px; }.avery-baby { right: 50%; bottom: -22px; height: 325px; max-width: none; transform: translateX(50%); animation-name: baby-bob-mobile; }.art-caption { left: 50%; z-index: 3; bottom: 14px; font-size: 10px; }
   @keyframes baby-bob-mobile { 0%,100% { transform: translateX(50%) translateY(0) rotate(-1deg); } 50% { transform: translateX(50%) translateY(-6px) rotate(1deg); } }
   @keyframes cloud-bob-mobile { 0%,100% { transform: translate(-50%, -50%) scale(.8) rotate(-1deg); } 50% { transform: translate(-50%, calc(-50% - 6px)) scale(.8) rotate(1deg); } }
